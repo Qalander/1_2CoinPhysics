@@ -22,7 +22,7 @@ public class ResultCounter : MonoBehaviour
             coinPrefab.transform.position = new Vector3(
                 ((i%Mathf.Sqrt(numberOfCoins))-(Mathf.Sqrt(numberOfCoins)/2)) * coinToCoinInterval,
                 6f,
-                ((int)(i/ Mathf.Sqrt(numberOfCoins)) - coinToCoinInterval) * (Mathf.Sqrt(numberOfCoins)/2)
+                (int)(i/ Mathf.Sqrt(numberOfCoins)) * coinToCoinInterval
                 );
             Instantiate(coinPrefab);
         }

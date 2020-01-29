@@ -491,7 +491,7 @@ MonoBehaviour:
   text: {fileID: 1243110078}
   coinPrefab: {fileID: 9072711675889744147, guid: 748d1a93129ece344a28cf94c68c6ff9,
     type: 3}
-  coinToCoinInterval: 2
+  coinToCoinInterval: 5
   numberOfCoins: 400
 --- !u!4 &1098328986
 Transform:

@@ -32,7 +32,7 @@ public class CoinFrontOrBack : MonoBehaviour
                     {
                         ResultCounter.black++;
                     }
-                    gameObject.SetActive(false);
+                    //gameObject.SetActive(false);
                 }
             }
             else
