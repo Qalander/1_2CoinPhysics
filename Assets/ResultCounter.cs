@@ -20,18 +20,27 @@ public class ResultCounter : MonoBehaviour
     {
         Settings.numberOfCoins = numberOfCoins;
         Settings.coinToCoinInterval = coinToCoinInterval;
-        //Create();
     }
     void Update()
     {
+        if (sumBuffer != sum)
+        {
+            text.color = new Color(255f, 0f, 0f);
+            text.text = Settings.resetCount.ToString() + "回目"
+                + "\nBLACK : " + black.ToString()
+                + "\nWHITE : " + (sum - black).ToString()
+                + "\n\n*合計*"
+                + "\nBLACK : " + blackAll.ToString()
+                + "\nWHITE : " + (sumAll - blackAll).ToString();
+            
+        }
         if (sum == Settings.numberOfCoins && !isDetermined)
         {
+            text.color = new Color(0f, 0f, 0f);
+
             isDetermined = true;
             sumAll += sum;
             blackAll += black;
-        }
-        if (sumBuffer != sum)
-        {
             text.text = Settings.resetCount.ToString() + "回目"
                 + "\nBLACK : " + black.ToString()
                 + "\nWHITE : " + (sum - black).ToString()
@@ -57,10 +66,12 @@ public class ResultCounter : MonoBehaviour
                 );
             Instantiate(coinPrefab);
         }
+        text.color = new Color(255f, 0f, 0f);
+
         text.text = Settings.resetCount.ToString() + "回目"
              + "\nBLACK : " + black.ToString()
              + "\nWHITE : " + (sum - black).ToString()
-             + "\n\n合計"
+             + "\n\n*合計*"
              + "\nBLACK : " + blackAll.ToString()
              + "\nWHITE : " + (sumAll - blackAll).ToString();
     }
